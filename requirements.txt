@@ -1,0 +1,9 @@
+mlflow
+dvc
+numpy
+pandas
+Flask
+scikit-learn
+seaborn
+dataclasses
+-e .

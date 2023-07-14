@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ineuron Project</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/styles.css">
+
+
+</head>
+
+<body>
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">ineuron Internship Project - Zomato Delivery Time Prediction </a>
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br>
+
+
+    <div class="container">
+        <form action="\predict" method="post">
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Delivery Person Age</h5>
+                            <div class="input-group">
+                                <input type="text" id="Delivery_person_Age" name="Delivery_person_Age" placeholder="Enter Delivery Person Age (float)" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Delivery Person Ratings</h5>
+                            <div class="input-group">
+                                <input type="text" id="Delivery_person_Ratings" name="Delivery_person_Ratings" placeholder="Enter Delivery Person Ratings (range 1 to 5, float)" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Restaurant Latitude</h5>
+                            <div class="input-group">
+                                <input type="text" id="Restaurant_latitude" name="Restaurant_latitude" placeholder="Enter Restaurant Latitude (float)" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Restaurant Longitude</h5>
+                            <div class="input-group">
+                                <input type="text" id="Restaurant_longitude" name="Restaurant_longitude" placeholder="Enter Restaurant Longitude (float)" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Delivery Location Latitude</h5>
+                            <div class="input-group">
+                                <input type="text" id="Delivery_location_latitude" name="Delivery_location_latitude" placeholder="Enter Delivery Location Latitude (float)" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Delivery Location Longitude</h5>
+                            <div class="input-group">
+                                <input type="text" id="Delivery_location_longitude" name="Delivery_location_longitude" placeholder="Enter Delivery Location Longitude (float)" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Weather Conditions</h5>
+                            <div class="input-group">
+                                <select id="Weather_conditions" name="Weather_conditions">
+                                    <option value="Sunny">Sunny</option>
+                                    <option value="Stormy">Stormy</option>
+                                    <option value="Sandstorms">Sandstorms</option>
+                                    <option value="Windy">Windy</option>
+                                    <option value="Fog">Fog</option>
+                                    <option value="Cloudy">Cloudy</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Road Traffic Density</h5>
+                            <div class="input-group">
+                                <select id="Road_traffic_density" name="Road_traffic_density">
+                                    <option value="Low">Low</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="High">High</option>
+                                    <option value="Jam">Jam</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Type of Vehicle</h5>
+                            <div class="input-group">
+                                <select id="Type_of_vehicle" name="Type_of_vehicle">
+                                    <option value="bicycle">Bicycle</option>
+                                    <option value="electric_scooter">Electric Scooter</option>
+                                    <option value="scooter">Scooter</option>
+                                    <option value="motorcycle">Motorcycle</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Festival</h5>
+                            <div class="input-group">
+                                <select id="Festival" name="Festival">
+                                    <option value="No">No</option>
+                                    <option value="Yes">Yes</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">City</h5>
+                            <div class="input-group">
+                                <select id="City" name="City">
+                                    <option value="Urban">Urban</option>
+                                    <option value="Metropolitan">Metropolitan</option>
+                                    <option value="Semi-Urban">Semi-Urban</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Multiple Deliveries</h5>
+                            <div class="input-group">
+                                <select id="multiple_deliveries" name="multiple_deliveries">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Vehicle Condition</h5>
+                            <div class="input-group">
+                                <select id="Vehicle_condition" name="Vehicle_condition">
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <!-- Submit -->
+            <input type="submit" value="Predict Delivery Time" class="btn btn-secondary">
+        </form>
+
+        <br>
+        <br>
+        <h3>{{final_result}}</h3>
+
+        <br>
+        <br>
+        <p>©2023 Project Created By Satyam Porwal</p>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
