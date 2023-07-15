@@ -1,0 +1,19 @@
+schema: '2.0'
+stages:
+  preprocess_and_train:
+    cmd: python src/pipeline/training_pipeline.py
+    deps:
+    - path: notebooks/data/zomato.csv
+      hash: md5
+      md5: 37a8f38a9cb203a5cfac750af14ef704
+      size: 6417410
+    - path: src/pipeline/training_pipeline.py
+      hash: md5
+      md5: c15917801415ed7c852ff1bf71779707
+      size: 695
+    outs:
+    - path: artifacts/
+      hash: md5
+      md5: 1d37384a387161a855887ab58a93da63.dir
+      size: 226289111
+      nfiles: 5
